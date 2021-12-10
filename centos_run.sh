@@ -27,7 +27,7 @@ done < "$FILE"
 echo $xauth_path >> runner.log
 
 # create container and start init
-docker run -it -p 80:80 -e "container=docker" --privileged=true -d --security-opt seccomp:unconfined --cap-add=SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro --env="DISPLAY" --net=host --volume=$xauth_path":/root/.Xauthority" --name wincc $2 bash -c "/usr/sbin/init"
+docker run -it -p 80:80 -e "container=docker" --privileged=true -d --security-opt seccomp:unconfined --cap-add=SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro --env="DISPLAY" --net=host --volume=$xauth_path":/root/.Xauthority" --volume=$1":/media/shared_data" --name wincc $2 bash -c "/usr/sbin/init"
 
 
 # run bash - wincc user
