@@ -1,0 +1,32 @@
+# Date: 04/12/2021
+# Author: fedeoli
+# Info: REDHAT Dockerfile. Base version
+
+# from CentOS distro
+FROM centos
+
+# set default shell
+SHELL ["/bin/bash","-c"]
+
+# install wget
+RUN yum install -y wget
+
+
+
+###### INSTALL WINCC OA ######
+# set root user
+USER root
+
+# download winccoa from wetransfer
+RUN mkdir /media/wincc_installation
+RUN wget --user-agent Mozilla/4.0 "https://download.wetransfer.com/eugv/513b8e7e81385649d83572cb17332a5920211205145718/ff5d8bde9441034f0a805b808ccdb2a89d7d946b/WinCC_OA_3.17_linux_rhel_x86_64_P012.zip?token=eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzg3MTgwNDksImV4cCI6MTYzODcxODY0OSwidW5pcXVlIjoiNTEzYjhlN2U4MTM4NTY0OWQ4MzU3MmNiMTczMzJhNTkyMDIxMTIwNTE0NTcxOCIsImZpbGVuYW1lIjoiV2luQ0NfT0FfMy4xN19saW51eF9yaGVsX\
+3g4Nl82NF9QMDEyLnppcCIsIndheWJpbGxfdXJsIjoiaHR0cDovL3N0b3JtLWludGVybmFsLnNlcnZpY2UuZXUtd2VzdC0xLndldHJhbnNmZXIubmV0L2FwaS93YXliaWxscz9zaWduZWRfd2F5YmlsbF9pZD1leUpmY21GcGJITWlPbnNpYldWemMyRm5aU0k2SWtKQ\
+mFITkxkMlpxV1VKRGRTSXNJbVY0Y0NJNklqSXdNakV0TVRJdE1EVlVNVFU2TXpjNk1qa3VNREF3V2lJc0luQjFjaUk2SW5kaGVXSnBiR3hmYVdRaWZYMC0tNjg3NDE5OGQ5MjE1MjcxZDBhZjExOGY0ZGQ3N2FkZjAwZWIzYmY5YTg0YWYzNGY0OWUyNGY2MmVlOGI0Z\
+GY1MCIsImZpbmdlcnByaW50IjoiZmY1ZDhiZGU5NDQxMDM0ZjBhODA1YjgwOGNjZGIyYTg5ZDdkOTQ2YiIsImNhbGxiYWNrIjoie1wiZm9ybWRhdGFcIjp7XCJhY3Rpb25cIjpcImh0dHA6Ly9mcm9udGVuZC5zZXJ2aWNlLmV1LXdlc3QtMS53ZXRyYW5zZmVyLm5ld\
+C93ZWJob29rcy9iYWNrZW5kXCJ9LFwiZm9ybVwiOntcInRyYW5zZmVyX2lkXCI6XCI1MTNiOGU3ZTgxMzg1NjQ5ZDgzNTcyY2IxNzMzMmE1OTIwMjExMjA1MTQ1NzE4XCIsXCJkb3dubG9hZF9pZFwiOjEzODIxNzE5MTMzfX0ifQ.dEwzO3nfjI3eePyXgS0q_pW5Mh\
+ulXCFPpJq_a3xKLlM&cf=y" -O /media/wincc_installation/winccOA_linux.zip
+ 
+
+
+
+
