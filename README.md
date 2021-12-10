@@ -11,7 +11,7 @@ available at _https://github.com/fedeoli/wincc-docker_
 ##### SYNTAX 
 *centos_run.sh* _/shared/folder/absolute/path_ _dockoly/wincc:centos-wincc-syscl_
 
-3) NB: for GUI app to run ONLY linux is supported
+*NB: for GUI app to run ONLY linux is supported*
 
 useful links:
 1) GUI on docker: https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110
