@@ -13,3 +13,8 @@ available at _https://github.com/fedeoli/wincc-docker_
 
 3) NB: for GUI app to run ONLY linux is supported
 
+useful links:
+a) GUI on docker: https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110
+b) systemctl on docker: https://stackoverflow.com/questions/41318625/start-a-service-inside-docker-centos-7-container
+c) tmux cheatsheet: https://tmuxcheatsheet.com/
+
