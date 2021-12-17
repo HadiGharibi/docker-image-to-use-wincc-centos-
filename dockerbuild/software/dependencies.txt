@@ -1,0 +1,6 @@
+epel-release
+sudo
+gedit
+tmux
+unzip
+passwd

@@ -1,0 +1,38 @@
+FROM ubuntu:latest
+
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y lubuntu-desktop lightdm passwd sudo
+
+RUN rm /run/reboot-required*
+
+###### MANAGE USERS ######
+# change root password
+RUN echo "root:root" | sudo chpasswd
+
+# create wincc user
+RUN useradd -m wincc
+
+# set user password to wincc
+RUN echo "wincc:wincc" | sudo chpasswd
+
+# add to wheel
+RUN usermod -aG sudo wincc
+
+RUN echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+RUN echo "\
+[LightDM]\n\
+[Seat:1]\n\
+#type=xremote\n\
+#xserver-hostname=host.docker.internal\n\
+#xserver-display-number=0\n\
+autologin-user=wincc\n\
+autologin-user-timeout=0\n\
+autologin-session=Lubuntu\n\
+vt=6\n\
+" > /etc/lightdm/lightdm.conf.d/lightdm.conf
+
+#ENV DISPLAY=host.docker.internal:0.0
+
+CMD service dbus start
+
+
+
