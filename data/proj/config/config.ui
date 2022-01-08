@@ -1,0 +1,4 @@
+[general] 
+data = "192.168.1.188" 
+event = "192.168.1.188" 
+mxProxy = "192.168.1.188 winccoa:5678 cert" 
