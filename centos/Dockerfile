@@ -40,4 +40,4 @@ cat /config/env.sh >> /etc/profile.d/winccoa.sh; \
 ENV PATH="/opt/WinCC_OA/current/bin:/config:${PATH}"
 
 # register console
-#CMD ["WCCILpmon", "-autoreg", "-config", "/proj/default/config/config"]
+CMD ["WCCILpmon", "-autoreg", "-config", "/proj/default/config/config"]
