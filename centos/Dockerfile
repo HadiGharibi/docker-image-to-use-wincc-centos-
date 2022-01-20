@@ -11,6 +11,7 @@ ADD software /software
 # install dependencies
 RUN yum install -y epel-release
 RUN yum install -y --skip-broken `cat /software/dependencies.txt`
+RUN yum install -y tmux
 
 ### WINCC OA INSTALLATION ###
 # import keys
@@ -40,4 +41,4 @@ cat /config/env.sh >> /etc/profile.d/winccoa.sh; \
 ENV PATH="/opt/WinCC_OA/current/bin:/config:${PATH}"
 
 # register console
-CMD ["WCCILpmon", "-autoreg", "-config", "/proj/default/config/config"]
+CMD ["WCCILpmon", "-autoreg", "-config", "/proj/default/config/config","& tmux"]
